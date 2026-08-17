@@ -2,7 +2,7 @@ name: Build Flutter APK
 
 on:
   push:
-    branches: [ "main" ] # Sesuaikan jika branch utama Anda bernama 'master'
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: actions/setup-java@v4
+      # Diubah dari v4 menjadi v5 untuk mengatasi warning deprecation
+      - uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: '17'
